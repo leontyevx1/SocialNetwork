@@ -1,0 +1,23 @@
+.item {
+    color: deepskyblue;
+    margin: 40px;
+}
+
+.item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.like {
+    color: red;
+    font-size: medium;
+}
+
+.newPost {
+    font-size: larger;
+}
+
+.message {
+    color: #253426;
+}

@@ -1,0 +1,23 @@
+.nav {
+    grid-area: n;
+    background-color: gray;
+}
+
+
+.item {
+    margin: 20px 0px 20px 10px;
+    width: 100%;
+}
+
+.item a {
+    color: #47e5e5;
+    font-size: large;
+    font-weight: bold;
+    font-family: Snell Roundhand, cursive;
+    text-decoration: none;
+}
+
+.item a.activeLink {
+    color: #FF9200FF;
+    /*margin: 20px 0px 20px 10px;*/
+}

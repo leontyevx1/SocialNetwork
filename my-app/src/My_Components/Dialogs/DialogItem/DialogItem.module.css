@@ -1,0 +1,25 @@
+.itemChat {
+    padding: 20px 0 20px 10px;
+}
+
+.chat {
+    background-color: #ff8000;
+    color: white;
+    padding: 0.5em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 20%;
+}
+
+.chat:hover {
+    background-color: #555;
+}
+
+.chat:active {
+    background-color: black;
+}
+
+/*
+.chat:visited {
+    background-color: #00fdbc;
+}*/

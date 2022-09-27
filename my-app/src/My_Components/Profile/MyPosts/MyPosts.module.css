@@ -1,0 +1,33 @@
+.postsBlock {
+    padding: 10px;
+}
+
+.buttonAdd {
+    width:90px;
+    text-align:center;
+    font-family: arial;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 14px;
+    border: black 1px solid;
+    color: black;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 20px auto;
+    transition: .5s;
+    border-radius: 0px;
+}
+.buttonAdd:hover {
+    top: 5px;
+    transition: .5s;
+    color: #f640a7;
+    border: #f640a7 1px solid;
+    border-radius: 10px;
+}
+.buttonAdd:active {
+    color: #000;
+    border: #1A1A1A 1px solid;
+    transition: .07s;
+    background-color: #575cc0;
+}
