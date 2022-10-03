@@ -10,6 +10,7 @@
 }
 
 .like {
+    display: flex;
     color: red;
     font-size: medium;
 }
@@ -20,4 +21,12 @@
 
 .message {
     color: #253426;
+}
+
+.likeButton {
+    padding-left: 10px;
+}
+
+.likeCount {
+    padding-left: 10px;
 }

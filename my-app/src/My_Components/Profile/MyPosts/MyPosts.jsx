@@ -2,7 +2,10 @@ import React from 'react';
 import classes from './MyPosts.module.css'
 import Post from "./Post/Post";
 
-const Posts = () => {
+
+const Posts = (props) => {
+    let postsElements = props.posts.map(p => <Post message={p.messagePost} likesCount={p.likesCount}/>);
+
     return (
         <div className={classes.postsBlock}>
             <h3>My posts</h3>
@@ -15,8 +18,8 @@ const Posts = () => {
                 </div>
             </div>
             <div>
-                <Post message='Hi! How are you?'/>
-                <Post message="It's my first post"/>
+                {/*Вставляем результат мапинга*/}
+                {postsElements}
             </div>
         </div>
     );

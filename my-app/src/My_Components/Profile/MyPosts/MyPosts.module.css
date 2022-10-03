@@ -31,3 +31,7 @@
     transition: .07s;
     background-color: #575cc0;
 }
+
+.buttonAdd {
+    padding-left: 10px;
+}

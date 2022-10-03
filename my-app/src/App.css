@@ -12,6 +12,6 @@
 
 .app-wrapper-content {
     grid-area: c;
-    background-color: #e0fcfc;
     width: 100%;
+    background: linear-gradient(90deg, #808080, #00d4ff);
 }
