@@ -3,11 +3,13 @@
 }
 
 .chat {
+    display: flex;
+    align-items: center;
     background-color: #ff8000;
     color: white;
     padding: 0.5em 1.5em;
     text-decoration: none;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     border-radius: 20%;
 }
 

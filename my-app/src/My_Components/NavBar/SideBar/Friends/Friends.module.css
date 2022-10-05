@@ -1,0 +1,18 @@
+.bestFriends {
+    display: flex;
+    margin: 15px auto 15px 20px;
+    width: 60px;
+    height: 60px;
+    border: 5px solid #0072ff;
+    border-radius: 50%;
+    box-shadow: 0 5px 30px 0 #008cff inset,
+                0 5px 30px 0 #3100ff inset,
+                0 5px 30px 0 #8500ff;
+}
+
+.name {
+    margin: auto;
+    font-size: 15px;
+    color: white;
+    font-family: inherit;
+}

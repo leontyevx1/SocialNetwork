@@ -25,6 +25,13 @@ let state = {
             {id: 6, message: 'Yo'},
             {id: 7, message: 'Yo Naruto'},
             {id: 8, message: 'Yo'}]
+    },
+    sideBar: {
+        bestFriends: [
+            {id:1, name: 'Max', lastname: 'Solncev'},
+            {id:2, name: 'Julia', lastname: 'Larina'},
+            {id:3, name: 'Dashi', lastname: 'Dants'}
+        ]
     }
 }
 

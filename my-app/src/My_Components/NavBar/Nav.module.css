@@ -13,7 +13,7 @@
     color: #47e5e5;
     font-size: large;
     font-weight: bold;
-    font-family: Snell Roundhand, cursive;
+    font-family: inherit;
     text-decoration: none;
 }
 
