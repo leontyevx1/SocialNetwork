@@ -1,0 +1,15 @@
+.footerBar{
+    grid-area: f;
+    background-color: rgba(0, 0, 0, 0.64);
+    width: 100%;
+    height: 30px;
+}
+.rights {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    margin: 0 auto;
+    font-family: inherit;
+    font-weight: lighter;
+    color: white;
+}

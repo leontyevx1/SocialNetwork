@@ -8,6 +8,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import News from "./My_Components/News/News"
 import Music from "./My_Components/Music/Music";
 import Settings from "./My_Components/Settings/Settings";
+import Footer from "./My_Components/Footer/Footer";
 
 
 const App = (props) => {
@@ -19,14 +20,9 @@ const App = (props) => {
                 <Nav state={props.state.sideBar}/>
                 <div className='app-wrapper-content'>
                     <Routes>
-{/*                        <Routes>
-                            <Route path="/julia" element={<Profile/>}/>
-                            <Route path="/anna" element={<Dialogs/>}/>
-                            <Route path="/max" element={<News/>}/>
-                            <Route path="/kruzha" element={<Music/>}/>
-                            <Route path="/emin" element={<Settings/>}/>
-                        </Routes>*/}
-                        <Route path="/profile" element={<Profile state={props.state.profilePage}/>}/>
+                        <Route path="/profile" element={<Profile profilePage={props.state.profilePage}
+                                                                 dispatch={props.dispatch}
+                        />}/>
                         <Route path="/dialogs" element={<Dialogs state={props.state.dialogsPage}/>}/>
                         <Route path="/News" element={<News/>}/>
                         <Route path="/music" element={<Music/>}/>
@@ -34,8 +30,9 @@ const App = (props) => {
                     </Routes>
                 </div>
             </div>
+            <Footer/>
         </BrowserRouter>
-);
+    );
 }
 
 export default App;
