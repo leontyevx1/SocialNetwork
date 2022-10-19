@@ -20,7 +20,7 @@ const Post = (props) => {
                 </div>
             </div>
         </div>
-            )
-            };
+    )
+};
 
-            export default Post;
+export default Post;
