@@ -1,21 +1,19 @@
 import React from 'react';
 import classes from './MyPosts.module.css'
 import Post from "./Post/Post";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
 
-const Posts = (props) => {
-    let postsElements = props.posts.map(p => <Post message={p.messagePost} likesCount={p.likesCount}/>);
+const MyPosts = (props) => {
+    let postsElements = props.posts.map(p => <Post message={p.messagePost} likesCount={p.likesCount} key={p.id} id={p.id}/>);
 
     let newPostElement = React.createRef();
 
-    let addPoster = () => {
-        props.dispatch(addPostActionCreator());
+    let addPost = () => {
+        props.addPostOption();
     }
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
+    let onPostChange = (e) => {
+        let text = e.target.value;
+        props.onPostChangeOption(text);
     }
 
     return (
@@ -27,7 +25,7 @@ const Posts = (props) => {
                               value={props.newPostText}/>
                 </div>
                 <div>
-                    <button onClick={addPoster} className={classes.buttonAdd}>Add post</button>
+                    <button onClick={addPost} className={classes.buttonAdd}>Add post</button>
                 </div>
             </div>
             <div>
@@ -38,4 +36,4 @@ const Posts = (props) => {
     );
 };
 
-export default Posts;
+export default MyPosts;

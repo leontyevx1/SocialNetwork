@@ -2,32 +2,25 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Messages from "./Messages/Messages";
-import {
-    addMessageActionCreator,
-    updateNewMessageTextActionCreator
-} from "../../redux/state";
 
 const Dialogs = (props) => {
+    let dialogsPage = props.dialogsPage;
+
     //Создание массива элементов из messages для получение JSX элементов
-    let messagesElements = props.dialogsPage.messages.map(m => <Messages message={m.message}/>);
+    let messagesElements = dialogsPage.messages.map(m => <Messages message={m.message} key={m.id} id={m.id}/>);
     //Создание массива элементов из dialogs для получение JSX элементов
-    let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem name={d.name} surname={d.surname} id={d.id}/>);
-    let newPostText = props.dialogsPage.newMessageText;
+    let dialogsElements = dialogsPage.dialogs.map(d => <DialogItem name={d.name} surname={d.surname} id={d.id} key={d.id}/>);
+    let newMessageText = props.dialogsPage.newMessageText;
 
     let answerElement = React.createRef();
 
     let addAnswer = () => {
-        props.dispatch(addMessageActionCreator());
+        props.addAnswerOption();
     }
 
-/*    let onMessageChange = () => {
-        let text = answerElement.current.value;
-        let action = updateNewMessageTextActionCreator(text);
-        props.dispatch(action);
-    }*/
     let onMessageChange = (e) => {
-        let newTextMessage = e.target.value;
-        props.dispatch(updateNewMessageTextActionCreator(newTextMessage));
+        let text = e.target.value;
+        props.onMessageChangeOption(text);
     }
 
     return (
@@ -40,7 +33,8 @@ const Dialogs = (props) => {
                 {/*Передаем элементы после мапинга*/}
                 {messagesElements}
                 <div>
-                    <textarea name="" id="" cols="80" rows="5" ref={answerElement} value={newPostText} onChange={onMessageChange}/>
+                        <textarea name="" id="" cols="80" rows="5" ref={answerElement} placeholder='Enter your message'
+                                  onChange={onMessageChange} value={newMessageText}/>
                 </div>
                 <div>
                     <button onClick={addAnswer}>Answer</button>

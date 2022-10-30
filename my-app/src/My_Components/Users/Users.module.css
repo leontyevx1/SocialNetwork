@@ -1,0 +1,72 @@
+.usersPhoto {
+    width: 160px;
+    height: 120px;
+}
+
+.buttonFollow {
+    width:90px;
+    text-align:center;
+    font-family: arial;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 14px;
+    border: black 1px solid;
+    color: black;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 20px auto;
+    transition: .5s;
+    border-radius: 0px;
+}
+.buttonFollow:hover {
+    top: 5px;
+    transition: .5s;
+    color: #f640a7;
+    border: #f640a7 1px solid;
+    border-radius: 10px;
+}
+.buttonFollow:active {
+    color: #000;
+    border: #1A1A1A 1px solid;
+    transition: .07s;
+    background-color: #00ff35;
+}
+
+.buttonFollow {
+    padding-left: 10px;
+}
+
+.buttonUnfollow {
+    width:90px;
+    text-align:center;
+    font-family: arial;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 14px;
+    border: black 1px solid;
+    color: black;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 20px auto;
+    transition: .5s;
+    border-radius: 0px;
+}
+.buttonUnfollow:hover {
+    top: 5px;
+    transition: .5s;
+    color: #f640a7;
+    border: #f640a7 1px solid;
+    border-radius: 10px;
+}
+.buttonUnfollow:active {
+    color: #000;
+    border: #1A1A1A 1px solid;
+    transition: .07s;
+    background-color: #ff0000;
+}
+
+.buttonUnfollow {
+    padding-left: 10px;
+}
