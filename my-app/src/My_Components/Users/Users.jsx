@@ -1,18 +1,19 @@
 import React from 'react';
 import classes from "./Users.module.css";
 import userImages from "../../assets/images/phProfDefault.png";
+import {NavLink} from "react-router-dom";
 
 const Users = (props) => {
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
     let pages = [];
-    for (let i=1; i <= pagesCount; i++) {
+    for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
 
     return (
-        <div>
+        <div className={classes.userPage}>
             <div className={classes.unSelectedPage}>
                 {pages.map(p => {
                     return <span className={props.currentPage === p && classes.selectedPage}
@@ -26,17 +27,23 @@ const Users = (props) => {
                 props.users.map(u => <div key={u.id}>
                     <span>
                         <div>
+                            <NavLink to={'/profile/' + u.id}>
                             <img src={u.photos.small != null ? u.photos.small : userImages}
                                  className={classes.usersPhoto}/>
+                            </NavLink>
                         </div>
                         <div>
                             {u.followed
-                                ? <button className={classes.buttonUnfollow} onClick={() => {
+                                ? <button className={classes.buttonUnfollow}
+                                          disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
                                     props.unfollow(u.id)
-                                }}>Unfollow</button>
-                                : <button className={classes.buttonFollow} onClick={() => {
+                                }}>
+                                    Unfollow</button>
+                                : <button className={classes.buttonFollow}
+                                          disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
                                     props.follow(u.id)
-                                }}>Follow</button>}
+                                }}>
+                                    Follow</button>}
                         </div>
                     </span>
                     <span>

@@ -1,0 +1,37 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana;
+    margin-top: 50px;
+}
+
+.click {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+}
+
+.click:link {
+    color: #265301;
+}
+
+.click:visited {
+    color: #437A16;
+}
+
+.click:focus {
+    border-bottom: 1px solid;
+    background: #BAE498;
+}
+
+.click:hover {
+    border-bottom: 1px solid;
+    background: #CDFEAA;
+}
+
+.click:active {
+    background: #265301;
+    color: #CDFEAA;
+}

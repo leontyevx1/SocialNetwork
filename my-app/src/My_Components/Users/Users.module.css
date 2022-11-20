@@ -1,3 +1,7 @@
+.userPage {
+
+}
+
 .usersPhoto {
     width: 160px;
     height: 150px;
@@ -16,6 +20,7 @@
     margin: 20px auto;
     transition: .5s;
     border-radius: 0px;
+    background-color: #e5e081;
 }
 .buttonFollow:hover {
     top: 5px;
@@ -35,6 +40,12 @@
     padding-left: 10px;
 }
 
+.buttonFollow:disabled {
+    color: #d0c7c7;
+    background-color: #989898;
+    border-radius: 10px;
+}
+
 .buttonUnfollow {
     width:90px;
     text-align:center;
@@ -48,6 +59,7 @@
     margin: 20px auto;
     transition: .5s;
     border-radius: 0px;
+    background-color: #8189e5;
 }
 
 .buttonUnfollow:hover {
@@ -66,6 +78,12 @@
 
 .buttonUnfollow {
     padding-left: 10px;
+}
+
+.buttonUnfollow:disabled {
+    color: #d0c7c7;
+    background-color: #989898;
+    border-radius: 10px;
 }
 
 .selectedPage {

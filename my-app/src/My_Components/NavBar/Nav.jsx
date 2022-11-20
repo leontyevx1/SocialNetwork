@@ -13,6 +13,9 @@ const Nav = (props) => {
                 <NavLink className={ navData => navData.isActive ? classes.activeLink : classes.item } to="/dialogs">Messages</NavLink>
             </div>
             <div className={classes.item}>
+                <NavLink className={ navData => navData.isActive ? classes.activeLink : classes.item } to="/users" activeClassName={classes.activeLink}>Users</NavLink>
+            </div>
+            <div className={classes.item}>
                 <NavLink className={ navData => navData.isActive ? classes.activeLink : classes.item } to="/news" activeClassName={classes.activeLink}>News</NavLink>
             </div>
             <div className={classes.item}>
@@ -20,9 +23,6 @@ const Nav = (props) => {
             </div>
             <div className={classes.item}>
                 <NavLink className={ navData => navData.isActive ? classes.activeLink : classes.item } to="/settings" activeClassName={classes.activeLink}>Settings</NavLink>
-            </div>
-            <div className={classes.item}>
-                <NavLink className={ navData => navData.isActive ? classes.activeLink : classes.item } to="/users" activeClassName={classes.activeLink}>Users</NavLink>
             </div>
             <div>
                 <SideBarContainer state={props.state}/>
