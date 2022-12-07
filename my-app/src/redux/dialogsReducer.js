@@ -19,8 +19,7 @@ let initialState = {
         {id: 5, message: 'Yo Naruto'},
         {id: 6, message: 'Yo'},
         {id: 7, message: 'Yo Naruto'},
-        {id: 8, message: 'Yo'}],
-    newMessageText: ''
+        {id: 8, message: 'Yo'}]
 };
 
 const dialogsReducer = (state = initialState, action) => {
@@ -31,7 +30,6 @@ const dialogsReducer = (state = initialState, action) => {
             let body = action.newMessage;
             return {
                 ...state,
-                newMessageText: '',
                 //копирование state.messages и добавление элемента в массив
                 messages: [...state.messages, {id: 9, message: body}]
             };

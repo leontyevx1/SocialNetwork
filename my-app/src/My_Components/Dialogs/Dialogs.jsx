@@ -11,18 +11,6 @@ const Dialogs = (props) => {
     let messagesElements = dialogsPage.messages.map(m => <Messages message={m.message} key={m.id} id={m.id}/>);
     //Создание массива элементов из dialogs для получение JSX элементов
     let dialogsElements = dialogsPage.dialogs.map(d => <DialogItem name={d.name} surname={d.surname} id={d.id} key={d.id}/>);
-    let newMessageText = props.dialogsPage.newMessageText;
-
-    let answerElement = React.createRef();
-
-    let addAnswer = () => {
-        props.addAnswerOption();
-    }
-
-    let onMessageChange = (e) => {
-        let text = e.target.value;
-        props.onMessageChangeOption(text);
-    }
 
     return (
         <div className={classes.dialogs}>
