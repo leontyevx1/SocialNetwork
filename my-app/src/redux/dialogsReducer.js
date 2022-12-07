@@ -1,4 +1,3 @@
-const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
 const SEND_MESSAGE = 'ADD-MESSAGE';
 
 let initialState = {
@@ -27,15 +26,9 @@ let initialState = {
 const dialogsReducer = (state = initialState, action) => {
     //switch фильтрует по типу
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE:
-            return {
-                //создание копии стейта с помощью spread-оператора
-                ...state,
-                newMessageText: action.body
-            };
 
         case SEND_MESSAGE:
-            let body = state.newMessageText;
+            let body = action.newMessage;
             return {
                 ...state,
                 newMessageText: '',
@@ -49,18 +42,10 @@ const dialogsReducer = (state = initialState, action) => {
 }
 
 
-export const addMessageActionCreator = () => {
+export const addMessageActionCreator = (newMessage) => {
     return {
-        type: SEND_MESSAGE
+        type: SEND_MESSAGE, newMessage
     }
 }
-
-export const updateNewMessageTextActionCreator = (body) => {
-    return {
-        type: UPDATE_NEW_MESSAGE,
-        body: body
-    }
-}
-
 
 export default dialogsReducer;

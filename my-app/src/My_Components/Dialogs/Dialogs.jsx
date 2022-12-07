@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Messages from "./Messages/Messages";
-import {Navigate} from "react-router-dom";
+import AddMessageForm from "./Form/AddMessageForm";
 
 const Dialogs = (props) => {
     let dialogsPage = props.dialogsPage;
@@ -33,13 +33,7 @@ const Dialogs = (props) => {
             <div className={classes.messages}>
                 {/*Передаем элементы после мапинга*/}
                 {messagesElements}
-                <div>
-                        <textarea name="" id="" cols="80" rows="5" ref={answerElement} placeholder='Enter your message'
-                                  onChange={onMessageChange} value={newMessageText}/>
-                </div>
-                <div>
-                    <button onClick={addAnswer}>Answer</button>
-                </div>
+                <AddMessageForm sendMessage={props.addAnswerOption}/>
             </div>
         </div>
     );

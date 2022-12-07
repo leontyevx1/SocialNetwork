@@ -11,9 +11,11 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
+
     return {
-        addPostOption: () => {dispatch(addPostActionCreator())},
-        onPostChangeOption: (text) => {dispatch(updateNewPostTextActionCreator(text))}
+        addPostOption: (newPostBody) => {
+            dispatch(addPostActionCreator(newPostBody))
+        }
     }
 }
 
