@@ -18,7 +18,7 @@ const AddPostForm = (props) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                    <textarea {...register("newPostBody", {})} placeholder="Enter" cols="30" rows="5" />
+                    <textarea {...register("newPostBody", {required: true})} placeholder="Enter" cols="30" rows="5" />
                 </div>
                 <div>
                     <button className={classes.buttonAdd}>Add post</button>

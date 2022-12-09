@@ -1,0 +1,4 @@
+.formError {
+    border: solid red 1px;
+    background-color: rgb(255, 219, 219);
+}
