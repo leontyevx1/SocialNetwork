@@ -5,7 +5,7 @@ import {login} from "../../../redux/authReducer";
 import {connect} from "react-redux";
 
 const Form = (props) => {
-    const {register, handleSubmit, formState: {errors}, reset} = useForm({
+    const {register, handleSubmit, formState: {errors}, reset, clearErrors, setError} = useForm({
         mode: 'all',
         defaultValues: {
             checkbox: false
@@ -14,7 +14,7 @@ const Form = (props) => {
 
     //принимает в себя data, те поля, которые мы получим
     const onSubmit = (data) => {
-        props.login(data.email, data.password, data.checkbox)
+        props.login(data.email, data.password, data.checkbox,setError)
         reset()
     }
 
@@ -29,6 +29,7 @@ const Form = (props) => {
                                 message: 'Please, enter valid email!'
                             }
                         })}
+                           onFocus={() => {clearErrors()}}
                            placeholder='Email'
                     />
                     {errors?.email && (<div style={{color: '#dc0000'}}>{errors.email.message}</div>)}
@@ -38,6 +39,7 @@ const Form = (props) => {
                         {
                             required: 'Password is require field!',
                         })}
+                           onFocus={() => {clearErrors()}}
                            placeholder='Password'
                     />
                     {errors?.password && (<div style={{color: '#dc0000'}}>{errors.password.message}</div>)}
@@ -49,6 +51,7 @@ const Form = (props) => {
                 <div>
                     <input type="submit" value="Login"/>
                 </div>
+                {errors.server && <div style={{color:'#dc0000'}}>{errors.server.message}</div>}
             </form>
     );
 };

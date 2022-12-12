@@ -11,8 +11,7 @@ let initialState = {
         {id: 3, messagePost: 'What are you doing now?', likesCount: 1},
         {id: 4, messagePost: 'WoooW', likesCount: 5},
         {id: 5, messagePost: 'Hi!My friend!', likesCount: 3}],
-    profile: null,
-    status: ""
+    profile: null
 };
 
 

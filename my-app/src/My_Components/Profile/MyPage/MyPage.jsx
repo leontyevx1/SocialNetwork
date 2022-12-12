@@ -4,16 +4,16 @@ import Preloader from "../../../common/Preloader/Preloader";
 import Status from "../../ProfileStatus/Status";
 
 const MyPage = (props) => {
+
     if (!props.profile) {
         return <Preloader/>
     }
 
-    if (!props.profile.data.photos.large) {
-        return <Preloader/>
-    }
     return (
         <div className={classes.content}>
-            <img src={props.profile.data.photos.large} alt="Photo profile"/>
+            {(props.profile.data.photos.large)
+                ? <img src={props.profile.data.photos.large} alt="Photo profile"/>
+                : <Preloader/>}
             <Status status={props.status} updateStatus={props.updateStatus}/>
             <div className={classes.infoAboutMe}>
                 <h1>{props.profile.fullName}</h1>
