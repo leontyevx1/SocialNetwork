@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './MyPage.module.css'
 import Preloader from "../../../common/Preloader/Preloader";
-import Status from "../../ProfileStatus/Status";
+import StatusWithHook from "../../ProfileStatus/StatusWithHook";
 
 const MyPage = (props) => {
 
@@ -14,7 +14,7 @@ const MyPage = (props) => {
             {(props.profile.data.photos.large)
                 ? <img src={props.profile.data.photos.large} alt="Photo profile"/>
                 : <Preloader/>}
-            <Status status={props.status} updateStatus={props.updateStatus}/>
+            <StatusWithHook status={props.status} updateStatus={props.updateStatus}/>
             <div className={classes.infoAboutMe}>
                 <h1>{props.profile.fullName}</h1>
                 <h3>About Me: {props.profile.aboutMe}</h3>
