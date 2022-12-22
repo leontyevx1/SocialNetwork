@@ -4,9 +4,9 @@ import {Navigate} from "react-router-dom"
 import {connect} from "react-redux";
 
 
-const Login = (props) => {
+const Login = ({isAuth}) => {
 
-    if (props.isAuth) {
+    if (isAuth) {
         return <Navigate to='/profile' />
     }
 

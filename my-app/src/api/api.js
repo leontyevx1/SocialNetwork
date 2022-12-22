@@ -10,7 +10,7 @@ const instance = axios.create({
 
 
 //DAL - Data Access Layer
-export const userApi = {
+export const usersAPI = {
     //метод объекта
     getUsers(currentPage, pageSize) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`)

@@ -4,10 +4,10 @@ import classes from './Profile.module.css'
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 
-const Profile = (props) => {
+const Profile = ({profile, status, updateStatus}) => {
     return (
         <div className={classes.profileDirectory}>
-            <MyPage profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
+            <MyPage profile={profile} status={status} updateStatus={updateStatus} />
             <MyPostsContainer/>
         </div>
     );

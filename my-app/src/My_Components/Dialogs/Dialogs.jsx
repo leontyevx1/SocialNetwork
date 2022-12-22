@@ -4,8 +4,7 @@ import DialogItem from "./DialogItem/DialogItem";
 import Messages from "./Messages/Messages";
 import AddMessageForm from "./Form/AddMessageForm";
 
-const Dialogs = (props) => {
-    let dialogsPage = props.dialogsPage;
+const Dialogs = ({dialogsPage, addAnswerOption}) => {
 
     //Создание массива элементов из messages для получение JSX элементов
     let messagesElements = dialogsPage.messages.map(m => <Messages message={m.message} key={m.id} id={m.id}/>);
@@ -21,7 +20,7 @@ const Dialogs = (props) => {
             <div className={classes.messages}>
                 {/*Передаем элементы после мапинга*/}
                 {messagesElements}
-                <AddMessageForm sendMessage={props.addAnswerOption}/>
+                <AddMessageForm sendMessage={addAnswerOption}/>
             </div>
         </div>
     );

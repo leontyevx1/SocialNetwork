@@ -31,6 +31,7 @@ const Form = (props) => {
                         })}
                            onFocus={() => {clearErrors()}}
                            placeholder='Email'
+                           autoComplete='email'
                     />
                     {errors?.email && (<div style={{color: '#dc0000'}}>{errors.email.message}</div>)}
                 </div>
@@ -41,6 +42,7 @@ const Form = (props) => {
                         })}
                            onFocus={() => {clearErrors()}}
                            placeholder='Password'
+                           autoComplete='current-password'
                     />
                     {errors?.password && (<div style={{color: '#dc0000'}}>{errors.password.message}</div>)}
 

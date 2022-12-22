@@ -1,17 +1,16 @@
 import {useForm} from "react-hook-form";
 import React from "react";
 
-const AddMessageForm = (props) => {
+const AddMessageForm = ({sendMessage}) => {
 
     const {register, handleSubmit, watch, reset} = useForm()
     const onSubmit = data => {
-        console.log(data.newMessage)
         onSendMessageClick(data);
         reset()
     }
 
     const onSendMessageClick = (data) => {
-        props.sendMessage(data.newMessage);
+        sendMessage(data.newMessage);
     };
 
     return (

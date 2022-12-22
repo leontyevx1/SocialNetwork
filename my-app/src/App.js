@@ -1,8 +1,7 @@
 import React from "react";
 import './App.css';
-import Header from "./My_Components/Header/Header";
 import Nav from "./My_Components/NavBar/Nav";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import News from "./My_Components/News/News"
 import Music from "./My_Components/Music/Music";
 import Settings from "./My_Components/Settings/Settings";
@@ -23,12 +22,12 @@ class App extends React.Component {
     }
 
     render() {
-        if (!this.props.initialized){
-            return <Preloader />
+        if (!this.props.initialized) {
+            return <Preloader/>
         }
 
         return (
-            <BrowserRouter>
+            <div>
                 <div className='app-wrapper'>
                     <HeaderContainer/>
                     <Nav/>
@@ -46,7 +45,7 @@ class App extends React.Component {
                     </div>
                 </div>
                 <Footer/>
-            </BrowserRouter>
+            </div>
         );
     }
 }

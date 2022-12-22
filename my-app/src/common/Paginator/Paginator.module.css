@@ -1,0 +1,14 @@
+.userPage{
+
+}
+
+.unSelectedPage{
+    cursor: pointer;
+    margin: 0 5px 0 5px;
+}
+
+.selectedPage{
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 5px 0 5px;
+}

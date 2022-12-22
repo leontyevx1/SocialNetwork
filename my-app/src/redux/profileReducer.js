@@ -75,35 +75,21 @@ export const setStatus = (status) => {
 }
 
 
-
-
 /// THUNK`S
-export const getProfile = (userId) => {
-    return (dispatch) => {
-        profileApi.getProfile(userId)
-            .then(data => {
-                dispatch(setUserProfile(data))
-            });
-    }
+export const getProfile = (userId) => async (dispatch) => {
+    const response = await profileApi.getProfile(userId)
+    dispatch(setUserProfile(response))
 }
 
-export const getStatus = (userId) => {
-    return (dispatch) => {
-        profileApi.getStatus(userId)
-            .then(response => {
-                dispatch(setStatus(response.data))
-            });
-    }
+export const getStatus = (userId) => async (dispatch) => {
+    const response = await profileApi.getStatus(userId)
+    dispatch(setStatus(response.data))
 }
 
-export const updateStatus = (status) => {
-    return (dispatch) => {
-        profileApi.updateStatus(status)
-            .then(response => {
-                if (response.data.resultCode === 0) {
-                    dispatch(setStatus(status))
-                }
-            });
+export const updateStatus = (status) => async (dispatch) => {
+    const response = await profileApi.updateStatus(status)
+    if (response.data.resultCode === 0) {
+        dispatch(setStatus(status))
     }
 }
 

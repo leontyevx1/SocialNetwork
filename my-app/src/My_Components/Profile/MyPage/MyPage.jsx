@@ -3,21 +3,21 @@ import classes from './MyPage.module.css'
 import Preloader from "../../../common/Preloader/Preloader";
 import StatusWithHook from "../../ProfileStatus/StatusWithHook";
 
-const MyPage = (props) => {
+const MyPage = ({profile, status, updateStatus}) => {
 
-    if (!props.profile) {
+    if (!profile) {
         return <Preloader/>
     }
 
     return (
         <div className={classes.content}>
-            {(props.profile.data.photos.large)
-                ? <img src={props.profile.data.photos.large} alt="Photo profile"/>
+            {(profile.data.photos.large)
+                ? <img src={profile.data.photos.large} alt="Photo profile"/>
                 : <Preloader/>}
-            <StatusWithHook status={props.status} updateStatus={props.updateStatus}/>
+            <StatusWithHook status={status} updateStatus={updateStatus}/>
             <div className={classes.infoAboutMe}>
-                <h1>{props.profile.fullName}</h1>
-                <h3>About Me: {props.profile.aboutMe}</h3>
+                <h1>{profile.fullName}</h1>
+                <h3>About Me: {profile.aboutMe}</h3>
             </div>
         </div>
     );
