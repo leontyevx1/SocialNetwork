@@ -1,15 +1,51 @@
-.content {
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 2fr 10fr;
+.mainPart {
+    display: flex;
+    flex-direction: row;
 }
 
-.content img {
+.mainPart img {
     width: 200px;
-    border-radius: 30%;
+    border-radius: 0%;
 }
 
-.infoAboutMe {
-    margin: 0 0 0 0px;
+.photoProfile{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
 }
 
+.content {
+    flex-direction: column;
+}
+
+.status {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    color: #7e4200;
+    margin: 5px 0 30px 0;
+}
+
+.info {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+
+.login {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 900;
+}
+
+.changeFile{
+    margin-top: 20px;
+}
+
+.btn {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contacts {
+    padding-left: 10px;
+}

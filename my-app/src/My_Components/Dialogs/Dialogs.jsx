@@ -14,11 +14,9 @@ const Dialogs = ({dialogsPage, addAnswerOption}) => {
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItems}>
-                {/*Передаем элементы после мапинга*/}
                 {dialogsElements}
             </div>
             <div className={classes.messages}>
-                {/*Передаем элементы после мапинга*/}
                 {messagesElements}
                 <AddMessageForm sendMessage={addAnswerOption}/>
             </div>

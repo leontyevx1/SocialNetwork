@@ -10,8 +10,8 @@ const Header = ({isAuth, login, logout}) => {
             <a href='http://localhost:3000/'><img src={logo}/></a>
             <div className={classes.loginBlock}>
                 {isAuth
-                    ? <div>{login} - <button onClick={logout}>Log Out</button></div>
-                    : <NavLink to={'/login'}>Login</NavLink>}
+                    ? <div><span className={classes.nckName}>{login}</span> <button className={classes.btnStyle} onClick={logout}>Log Out</button></div>
+                    : <button className={classes.btnStyle}><NavLink to={'/login'}>Login</NavLink></button>}
             </div>
         </header>
     );

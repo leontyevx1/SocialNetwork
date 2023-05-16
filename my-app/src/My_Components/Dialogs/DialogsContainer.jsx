@@ -9,7 +9,8 @@ import {compose} from "redux";
 
 const mapStateToProps = (state) => {
     return {
-        dialogsPage: state.dialogsPage
+        dialogsPage: state.dialogsPage,
+        addAnswerOption: state.addAnswerOption
     }
 }
 

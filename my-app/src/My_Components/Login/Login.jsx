@@ -5,9 +5,8 @@ import {connect} from "react-redux";
 
 
 const Login = ({isAuth}) => {
-
     if (isAuth) {
-        return <Navigate to='/profile' />
+        return <Navigate to='/profile'/>
     }
 
     return (

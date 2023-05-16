@@ -3,7 +3,7 @@ import React from "react";
 
 const AddMessageForm = ({sendMessage}) => {
 
-    const {register, handleSubmit, watch, reset} = useForm()
+    const {register, handleSubmit, reset} = useForm()
     const onSubmit = data => {
         onSendMessageClick(data);
         reset()
@@ -17,7 +17,8 @@ const AddMessageForm = ({sendMessage}) => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <div>
-                    <textarea {...register("newMessage", {required: true})} placeholder="Enter your message" cols="80" rows="5" />
+                    <textarea {...register("newMessage", {required: true})} placeholder="Enter your message" cols="80"
+                              rows="5"/>
                 </div>
                 <div>
                     <button>Send</button>

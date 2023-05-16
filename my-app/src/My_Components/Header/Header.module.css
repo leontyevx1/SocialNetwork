@@ -8,12 +8,90 @@
     padding-left: 15px;
 }
 
-.loginBlock {
-    float: right;
-    margin: 20px 10px auto auto;
-    font-weight: bold;
+.nckName{
+    font-weight: 700;
+    font-size: 25px;
 }
 
 .loginBlock a {
     color: white;
+}
+
+.loginBlock {
+    height: 100%;
+    float: right;
+    margin: 20px 10px auto auto;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.btnStyle {
+    min-width: 150px;
+    min-height: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: #313133;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+    transition: all 0.2s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+button::before {
+    border-radius: 1000px;
+    min-width: calc(150px + 10px);
+    min-height: calc(40px + 12px);
+    border: 3px solid #00FFCB;
+    box-shadow: 0 0 60px rgba(0,255,203,.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+
+.btnStyle:hover, .btnStyle:focus {
+    color: #313133;
+    transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+    opacity: 1;
+}
+
+button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+}
+
+.btnStyle a {
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: #313133;
 }

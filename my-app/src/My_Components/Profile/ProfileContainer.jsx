@@ -1,7 +1,7 @@
 import React from 'react';
 import Profile from './Profile'
 import {connect} from "react-redux";
-import {getProfile, getStatus, updateStatus} from "../../redux/profileReducer";
+import {getProfile, getStatus, savePhoto, updateStatus} from "../../redux/profileReducer";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
@@ -9,11 +9,23 @@ import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
 
-    componentDidMount() {
+    refreshProfile() {
         let userId = this.props.router.params.userId;
-        if (!userId) { userId = this.props.authorizedUserId;}
+        if (!userId) {
+            userId = this.props.authorizedUserId;
+        }
         this.props.getProfile(userId);
-        this.props.getStatus(userId);
+        this.props.getStatus(userId)
+    }
+
+    componentDidMount() {
+        this.refreshProfile();
+    };
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.props.router.params.userId !== prevProps.router.params.userId) {
+            this.refreshProfile();
+        }
     };
 
     //Заглушка HOC
@@ -21,13 +33,14 @@ class ProfileContainer extends React.Component {
     render() {
         return (
             <Profile {...this.props}
+                     isOwner={!this.props.router.params.userId}
                      profile={this.props.profile}
                      status={this.props.status}
-                     updateStatus={this.props.updateStatus}/>
+                     updateStatus={this.props.updateStatus}
+                     savePhoto={this.props.savePhoto}/>
         );
     }
 }
-
 
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
@@ -35,7 +48,6 @@ let mapStateToProps = (state) => ({
     authorizedUserId: state.auth.id,
     isAuth: state.auth.isAuth
 });
-
 
 function withRouter(Component) {
 
@@ -46,7 +58,7 @@ function withRouter(Component) {
         return (
             <Component
                 {...props}
-                router={{ location, navigate, params }}
+                router={{location, navigate, params}}
             />
         );
     }
@@ -55,7 +67,7 @@ function withRouter(Component) {
 }
 
 export default compose(
-    connect(mapStateToProps,{getProfile,getStatus,updateStatus}),
+    connect(mapStateToProps, {getProfile, getStatus, updateStatus, savePhoto}),
     withRouter,
     withAuthRedirect)(ProfileContainer);
 

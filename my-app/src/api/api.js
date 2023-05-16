@@ -57,15 +57,16 @@ export const authApi = {
 export const profileApi = {
     getProfile(userId) {
         return instance.get(`profile/${userId}`);
-        },
+    },
     getStatus(userId) {
         return instance.get(`profile/status/${userId}`);
     },
     updateStatus(status) {
         return instance.put(`profile/status`, {status: status});
-    }
-/*            .then(response => {
-                return response.data;
-            });
-    }*/
+    },
+    savePhoto(photoFile) {
+        const formData = new FormData();
+        formData.append("image", photoFile);
+        return instance.put(`profile/photo`, formData);
+    },
 }

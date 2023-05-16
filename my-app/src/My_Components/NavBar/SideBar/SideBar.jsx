@@ -10,9 +10,9 @@ const SideBar = ({bestFriends}) => {
         <div className={classes.headSide}>
             <span className={classes.alert}>3</span>
             Best Friends
-        <div>
-            {friendsName}
-        </div>
+            <div>
+                {friendsName}
+            </div>
         </div>
     );
 };

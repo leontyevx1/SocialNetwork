@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from "react";
+import React, {Suspense} from "react";
 import './App.css';
 import Nav from "./My_Components/NavBar/Nav";
 import {Routes, Route} from "react-router-dom";
@@ -12,9 +12,10 @@ import LoginPage from './My_Components/Login/Login'
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./common/Preloader/Preloader";
+import {Navigate} from "react-router-dom";
 
-const News = lazy(() => import("./My_Components/News/News"))
-const Music = lazy(() => import("./My_Components/Music/Music"))
+const News = React.lazy(() => import("./My_Components/News/News"));
+const Music = React.lazy(() => import("./My_Components/Music/Music"));
 
 class App extends React.Component {
     componentDidMount() {
@@ -42,6 +43,8 @@ class App extends React.Component {
                                 <Route path="/music" element={<Music/>}/>
                                 <Route path="/settings" element={<Settings/>}/>
                                 <Route path="/login" element={<LoginPage/>}/>
+                                <Route exact path="/" element={<Navigate to={'/profile'}/>}/>
+                                <Route path='*' element={<div>404 NOT FOUND!</div>}/>
                             </Routes>
                         </Suspense>
                     </div>

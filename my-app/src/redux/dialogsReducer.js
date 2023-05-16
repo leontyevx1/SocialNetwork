@@ -2,38 +2,28 @@ const SEND_MESSAGE = 'ADD-MESSAGE';
 
 let initialState = {
     dialogs: [
-        {id: 1, name: 'Julia', surname: 'Larina'},
-        {id: 2, name: 'Anna', surname: 'Ekimova'},
-        {id: 3, name: 'Max', surname: 'Solncev'},
-        {id: 4, name: 'Anna', surname: 'Kruzhalina'},
-        {id: 5, name: 'Emin', surname: 'Musaev'},
-        {id: 6, name: 'Dashi', surname: 'Dantsaranov'},
-        {id: 7, name: 'Kirill', surname: 'Tsypylov'},
-        {id: 8, name: 'Dima', surname: 'Yanios'}
+        {id: 1, name: 'Julia', surname: 'L'},
+        {id: 2, name: 'Anna', surname: 'E'},
+        {id: 3, name: 'Max', surname: 'S'},
+        {id: 4, name: 'Anna', surname: 'K'},
+        {id: 5, name: 'Emin', surname: 'M'},
+        {id: 6, name: 'Dashi', surname: 'D'},
+        {id: 7, name: 'Kirill', surname: 'T'},
+        {id: 8, name: 'Dima', surname: 'Y'}
     ],
     messages: [
-        {id: 1, message: 'Hello, my darling!'},
-        {id: 2, message: 'Hello Naruto'},
-        {id: 3, message: 'Yo Naruto'},
-        {id: 4, message: 'Yo'},
-        {id: 5, message: 'Yo Naruto'},
-        {id: 6, message: 'Yo'},
-        {id: 7, message: 'Yo Naruto'},
-        {id: 8, message: 'Yo'}]
+        {id: 1, message: 'Hello, my friend!'}]
 };
 
 const dialogsReducer = (state = initialState, action) => {
     //switch фильтрует по типу
     switch (action.type) {
-
         case SEND_MESSAGE:
             let body = action.newMessage;
             return {
                 ...state,
-                //копирование state.messages и добавление элемента в массив
                 messages: [...state.messages, {id: 9, message: body}]
             };
-
         default:
             return state;
     }

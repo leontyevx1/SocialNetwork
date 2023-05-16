@@ -10,14 +10,16 @@
 }
 
 .item a {
-    color: #47e5e5;
+    color: #ff9200;
+    font-weight: 700;
     font-size: large;
-    font-weight: bold;
-    font-family: inherit;
+    font-family: 'Source Sans Pro', sans-serif;
     text-decoration: none;
+    text-shadow: 1px 1px 1px #000;
 }
 
 .item a.activeLink {
-    color: #FF9200FF;
+    color: #f7ff00;
+    text-shadow: 2px 2px 2px #000;
     /*margin: 20px 0px 20px 10px;*/
 }
